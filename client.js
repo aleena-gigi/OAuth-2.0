@@ -1,4 +1,3 @@
-
 const express=require("express")
 const app=express()
 const axios=require("axios")
@@ -19,16 +18,7 @@ app.get("/callback",(req,res)=>{        //localhost:3000/callback    redirected 
         then(function(response){
             console.log("Access token: "+response.data)})
         .catch(function(err){console.log(err)})
-        // const uri=new URL(url)
-        // uri.searchParams.append("token",token)
-        // uri.searchParams.append("redirect_uri","http://localhost:3000")
-        // res.redirect(uri.toString())        //localhost:3002/auth/access?token=&redirect_uri
+   
 })
 
-
-
-//Finally it gets redirected to the main client app with the accesstoken
-// app.get("/",(req,res)=>{            //redirected to the root to give the access token
-//     console.log("Access token: "+req.query.access_token)
-// })
 app.listen(3000)
